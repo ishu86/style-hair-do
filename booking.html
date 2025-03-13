@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book an Appointment | Style Hair Do</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="images/logo.svg" alt="Style Hair Do Logo" class="logo">
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+        <a href="booking.html" class="book-now-btn active">Book Now</a>
+    </header>
+
+    <main>
+        <section class="booking-section">
+            <h1>Book Your Appointment</h1>
+            <p class="booking-intro">Select your services, stylist, and preferred time to schedule your visit.</p>
+            
+            <div class="booking-container">
+                <form id="booking-form" class="booking-form">
+                    <div class="form-step active" id="step1">
+                        <h2>1. Select Service(s)</h2>
+                        <div class="service-options">
+                            <div class="service-option">
+                                <input type="checkbox" id="haircut" name="services" value="haircut">
+                                <label for="haircut">Haircut & Style <span class="price">$45+</span></label>
+                            </div>
+                            <div class="service-option">
+                                <input type="checkbox" id="color" name="services" value="color">
+                                <label for="color">Hair Color <span class="price">$85+</span></label>
+                            </div>
+                            <div class="service-option">
+                                <input type="checkbox" id="highlights" name="services" value="highlights">
+                                <label for="highlights">Highlights <span class="price">$95+</span></label>
+                            </div>
+                            <div class="service-option">
+                                <input type="checkbox" id="beard" name="services" value="beard">
+                                <label for="beard">Beard Trim & Shape <span class="price">$25+</span></label>
+                            </div>
+                            <div class="service-option">
+                                <input type="checkbox" id="treatment" name="services" value="treatment">
+                                <label for="treatment">Hair Treatment <span class="price">$55+</span></label>
+                            </div>
+                        </div>
+                        <button type="button" class="next-btn" onclick="nextStep(1)">Next</button>
+                    </div>
+                    
+                    <div class="form-step" id="step2">
+                        <h2>2. Choose Your Stylist</h2>
+                        <div class="stylist-options">
+                            <div class="stylist-option">
+                                <input type="radio" id="stylist1" name="stylist" value="alex">
+                                <label for="stylist1">
+                                    <div class="stylist-img placeholder">Alex</div>
+                                    <div class="stylist-info">
+                                        <h3>Alex</h3>
+                                        <p>Master Stylist</p>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="stylist-option">
+                                <input type="radio" id="stylist2" name="stylist" value="jordan">
+                                <label for="stylist2">
+                                    <div class="stylist-img placeholder">Jordan</div>
+                                    <div class="stylist-info">
+                                        <h3>Jordan</h3>
+                                        <p>Color Specialist</p>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="stylist-option">
+                                <input type="radio" id="stylist3" name="stylist" value="taylor">
+                                <label for="stylist3">
+                                    <div class="stylist-img placeholder">Taylor</div>
+                                    <div class="stylist-info">
+                                        <h3>Taylor</h3>
+                                        <p>Style Expert</p>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="stylist-option">
+                                <input type="radio" id="any" name="stylist" value="any">
+                                <label for="any">
+                                    <div class="stylist-img placeholder">Any</div>
+                                    <div class="stylist-info">
+                                        <h3>Any Available</h3>
+                                        <p>First available stylist</p>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="btn-group">
+                            <button type="button" class="back-btn" onclick="prevStep(2)">Back</button>
+                            <button type="button" class="next-btn" onclick="nextStep(2)">Next</button>
+                        </div>
+                    </div>
+                    
+                    <div class="form-step" id="step3">
+                        <h2>3. Select Date & Time</h2>
+                        <div class="calendar-container">
+                            <div class="calendar-header">
+                                <button type="button" id="prev-month">&lt;</button>
+                                <h3 id="current-month">March 2025</h3>
+                                <button type="button" id="next-month">&gt;</button>
+                            </div>
+                            <div class="calendar" id="booking-calendar">
+                                <!-- Calendar will be generated by JavaScript -->
+                                <div class="weekdays">
+                                    <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div>
+                                    <div>Thu</div><div>Fri</div><div>Sat</div>
+                                </div>
+                                <div class="days" id="calendar-days">
+                                    <!-- Days will be inserted by JavaScript -->
+                                </div>
+                            </div>
+                            
+                            <div class="time-slots">
+                                <h4>Available Times</h4>
+                                <div class="time-slot-options" id="time-slots">
+                                    <button type="button" class="time-slot">9:00 AM</button>
+                                    <button type="button" class="time-slot">10:00 AM</button>
+                                    <button type="button" class="time-slot">11:00 AM</button>
+                                    <button type="button" class="time-slot">1:00 PM</button>
+                                    <button type="button" class="time-slot">2:00 PM</button>
+                                    <button type="button" class="time-slot">3:00 PM</button>
+                                    <button type="button" class="time-slot">4:00 PM</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-group">
+                            <button type="button" class="back-btn" onclick="prevStep(3)">Back</button>
+                            <button type="button" class="next-btn" onclick="nextStep(3)">Next</button>
+                        </div>
+                    </div>
+                    
+                    <div class="form-step" id="step4">
+                        <h2>4. Your Information</h2>
+                        <div class="personal-info">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="notes">Special Notes (Optional)</label>
+                                <textarea id="notes" name="notes" rows="3"></textarea>
+                            </div>
+                        </div>
+                        <div class="btn-group">
+                            <button type="button" class="back-btn" onclick="prevStep(4)">Back</button>
+                            <button type="submit" class="submit-btn">Confirm Booking</button>
+                        </div>
+                    </div>
+                </form>
+                
+                <div class="booking-summary">
+                    <h3>Booking Summary</h3>
+                    <div id="summary-content">
+                        <p>Select services to see your booking details</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <img src="images/logo.svg" alt="Style Hair Do Logo" class="footer-logo">
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="booking.html">Book Appointment</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                </ul>
+            </div>
+            <div class="newsletter">
+                <h4>Stay Updated</h4>
+                <p>Subscribe to our newsletter for specials and updates</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Style Hair Do. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/booking.js"></script>
+</body>
+</html>

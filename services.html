@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Style Hair Do</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Additional styles specific to services page */
+        .service-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://source.unsplash.com/random/1200x600/?haircut') no-repeat center center/cover;
+            padding: 5rem 2rem;
+            text-align: center;
+            color: white;
+            margin-bottom: 3rem;
+        }
+        
+        .service-categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+        
+        .category-btn {
+            padding: 0.7rem 1.5rem;
+            background-color: var(--light-bg);
+            border: none;
+            border-radius: var(--border-radius);
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .category-btn:hover,
+        .category-btn.active {
+            background-color: var(--accent-color);
+            color: white;
+        }
+        
+        .service-list {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .service-category {
+            margin-bottom: 3rem;
+        }
+        
+        .service-category h2 {
+            position: relative;
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .service-category h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+        
+        .service-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 1.5rem;
+            border-bottom: 1px solid #eee;
+            transition: var(--transition);
+        }
+        
+        .service-item:hover {
+            background-color: var(--light-bg);
+        }
+        
+        .service-info {
+            flex: 1;
+        }
+        
+        .service-title {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+        
+        .service-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .service-price {
+            color: var(--secondary-color);
+            font-weight: 700;
+        }
+        
+        .service-duration {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+        
+        .cta-container {
+            text-align: center;
+            margin: 4rem 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="images/logo.svg" alt="Style Hair Do Logo" class="logo">
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+        <a href="booking.html" class="book-now-btn">Book Now</a>
+    </header>
+
+    <main>
+        <section class="service-header">
+            <h1>Our Services</h1>
+            <p>Professional hair care services tailored to your unique style</p>
+        </section>
+
+        <section class="service-categories">
+            <button class="category-btn active" data-category="all">All Services</button>
+            <button class="category-btn" data-category="haircuts">Haircuts</button>
+            <button class="category-btn" data-category="color">Color</button>
+            <button class="category-btn" data-category="styling">Styling</button>
+            <button class="category-btn" data-category="treatments">Treatments</button>
+            <button class="category-btn" data-category="beard">Beard</button>
+        </section>
+
+        <section class="service-list">
+            <div class="service-category" id="haircuts">
+                <h2>Haircuts & Styling</h2>
+                
+                <div class="service-item">
+                    <div class="service-info">
+                        <div class="service-title">
+                            <span class="service-name">Men's Haircut</span>
+                            <span class="service-price">$35+</span>
+                        </div>
+                        <div class="service-duration">45 minutes</div>
+                        <p>Precision cut tailored to your face shape and style, includes consultation, shampoo, and styling.</p>
+                    </div>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-info">
+                        <div class="service-title">
+                            <span class="service-name">Women's Haircut</span>
+                            <span class="service-price">$45+</span>
+                        </div>
+                        <div class="service-duration">60 minutes</div>
+                        <p>Customized cut and style with attention to texture, layers, and movement. Includes consultation, shampoo, and blow dry.</p>
+                    </div>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-info">
+                        <div class="service-title">
+                            <span class="service-name">Kids Haircut (Under 12)</span>
+                            <span class="service-price">$25+</span>
+                        </div>
+                        <div class="service-duration">30 minutes</div>
+                        <p>Age-appropriate styling in a friendly environment to make haircuts fun and stress-free.</p>
+                    </div>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-info">
+                        <div class="service-title">
+                            <span class="service-name">Bang Trim</span>
+                            <span class="service-price">$15</span>
+                        </div>
+                        <div class="service-duration">15 minutes</div>
+                        <p>Quick refresh for bangs between regular haircuts.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-category" id="color">
+                <h2>Color Services</h2>
+                
+                <div class="service-item">
+                    <div class="service-info">
+                        <div class="service-title">
+                            <span class="service-name">Root Touch-Up</span>
+                            <span class="service-price">$65+</span>
+                        </div>
+                        <div class="service-duration">90 minutes</div>
+                        <p>Color application to the roots, perfect for maintaining your current hair color.</p>
+                    </div>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-info">
+                        <div class="service-title">
+                            <span class="service-name">Full Color</span>
+                            <span class="service-price">$85+</span>
+                        </div>
+                        <div class="service-duration">120 minutes</div>
+                        <p>Complete color transformation from roots to ends with our premium color line.</p>
+                    </div>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-info">
+                        <div class="service-title">
+                            <span class="service-name">Partial Highlights</span>
+                            <span class="service-price">$95+</span>
+                        </div>
+                        <div class="service-duration">120 minutes</div>
+                        <p>Dimensional color applied to selected sections to create depth and brightness.</p>
+                    </div>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-info">
+                        <div class="service-title">
+                            <span class="service-name">Full Highlights</span>
+                            <span class="service-price">$125+</span>
+                        </div>
+                        <div class="service-duration">150 minutes</div>
+                        <p>Complete highlighting service throughout the hair for maximum dimension and contrast.</p>
+                    </div>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-info">
+                        <div class="service-title">
+                            <span class="service-name">Balayage/Ombre</span>
+                            <span class="service-price">$150+</span>
+                        </div>
+                        <div class="service-duration">180 minutes</div>
+                        <p>Hand-painted highlights creating a natural, sun-kissed gradient effect.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-category" id="styling">
+                <h2>Styling Services</h2>
+                
+                <div class="service-item">
+                    <div class="service-info">
+                        <div class="service-title">
+                            <span class="service-name">Blowout</span>
+                            <span class="service-price">$35+</span>
+                        </div>
+                        <div class="service-duration">45 minutes</div>
+                        <p>Professional blow dry and styling to achieve smooth, voluminous results.</p>
+                    </div>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-info">
+                        <div class="service-title">
+                            <span class="service-name">Special Occasion Style</span>
+                            <span class="service-price">$75+</span>
+                        </div>
+                        <div class="service-duration">60 minutes</div>
+                        <p>Elegant updo or styling for weddings, proms, and special events.</p>
+                    </div>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-info">
+                        <div class="service-title">
+                            <span class="service-name">Straightening Treatment</span>
+                            <span class="service-price">$200+</span>
+                        </div>
+                        <div class="service-duration">180 minutes</div>
+                        <p>Long-lasting smoothing treatment to reduce frizz and straighten hair for up to 3 months.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-category" id="treatments">
+                <h2>Hair Treatments</h2>
+                
+                <div class="service-item">
+                    <div class="service-info">
+                        <div class="service-title">
+                            <span class="service-name">Deep Conditioning</span>
+                            <span class="service-price">$25+</span>
+                        </div>
+                        <div class="service-duration">30 minutes</div>
+                        <p>Intensive treatment to restore moisture and repair damaged hair.</p>
+                    </div>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-info">
+                        <div class="service-title">
+                            <span class="service-name">Scalp Treatment</span>
+                            <span class="service-price">$35+</span>
+                        </div>
+                        <div class="service-duration">45 minutes</div>
+                        <p>Therapeutic treatment to balance the scalp, reduce dandruff, and promote healthy hair growth.</p>
+                    </div>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-info">
+                        <div class="service-title">
+                            <span class="service-name">Bond Strengthening</span>
+                            <span class="service-price">$45+</span>
+                        </div>
+                        <div class="service-duration">45 minutes</div>
+                        <p>Advanced treatment to repair and strengthen hair bonds, perfect after chemical services.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-category" id="beard">
+                <h2>Beard Services</h2>
+                
+                <div class="service-item">
+                    <div class="service-info">
+                        <div class="service-title">
+                            <span class="service-name">Beard Trim</span>
+                            <span class="service-price">$20</span>
+                        </div>
+                        <div class="service-duration">20 minutes</div>
+                        <p>Precision beard shaping and trimming to enhance your facial features.</p>
+                    </div>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-info">
+                        <div class="service-title">
+                            <span class="service-name">Beard Styling + Hot Towel</span>
+                            <span class="service-price">$35</span>
+                        </div>
+                        <div class="service-duration">45 minutes</div>
+                        <p>Luxury beard service including trim, hot towel treatment, and beard oil application.</p>
+                    </div>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-info">
+                        <div class="service-title">
+                            <span class="service-name">Beard Color</span>
+                            <span class="service-price">$45+</span>
+                        </div>
+                        <div class="service-duration">45 minutes</div>
+                        <p>Color application to cover gray or enhance your beard's appearance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="cta-container">
+            <p>All services include a detailed consultation to ensure you get exactly the look you want.</p>
+            <p>Prices may vary depending on hair length, thickness, and condition.</p>
+            <a href="booking.html" class="cta-button">Book Your Appointment</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <img src="images/logo.svg" alt="Style Hair Do Logo" class="footer-logo">
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="booking.html">Book Appointment</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                </ul>
+            </div>
+            <div class="newsletter">
+                <h4>Stay Updated</h4>
+                <p>Subscribe to our newsletter for specials and updates</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Style Hair Do. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Service category filtering
+        const categoryButtons = document.querySelectorAll('.category-btn');
+        const serviceCategories = document.querySelectorAll('.service-category');
+        
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                categoryButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                const category = button.getAttribute('data-category');
+                
+                if (category === 'all') {
+                    // Show all categories
+                    serviceCategories.forEach(cat => cat.style.display = 'block');
+                } else {
+                    // Hide all categories
+                    serviceCategories.forEach(cat => cat.style.display = 'none');
+                    // Show selected category
+                    document.getElementById(category).style.display = 'block';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Style Hair Do</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Additional styles specific to gallery page */
+        .gallery-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://source.unsplash.com/random/1200x600/?hairstyle') no-repeat center center/cover;
+            padding: 5rem 2rem;
+            text-align: center;
+            color: white;
+            margin-bottom: 3rem;
+        }
+        
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+        
+        .filter-btn {
+            padding: 0.7rem 1.5rem;
+            background-color: var(--light-bg);
+            border: none;
+            border-radius: var(--border-radius);
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            background-color: var(--accent-color);
+            color: white;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .gallery-item {
+            position: relative;
+            height: 300px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .gallery-image {
+            width: 100%;
+            height: 100%;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            transition: var(--transition);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 1rem;
+            transform: translateY(100%);
+            transition: var(--transition);
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+        
+        .gallery-title {
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+        
+        .gallery-stylist {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .gallery-instagram {
+            text-align: center;
+            margin: 4rem 0;
+        }
+        
+        .instagram-feed {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        .instagram-item {
+            height: 200px;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            border-radius: var(--border-radius);
+        }
+        
+        .follow-instagram {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: #e1306c;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            margin-top: 1.5rem;
+            transition: var(--transition);
+        }
+        
+        .follow-instagram:hover {
+            background-color: #c13584;
+            transform: translateY(-2px);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="images/logo.svg" alt="Style Hair Do Logo" class="logo">
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+        <a href="booking.html" class="book-now-btn">Book Now</a>
+    </header>
+
+    <main>
+        <section class="gallery-header">
+            <h1>Our Work</h1>
+            <p>Browse our portfolio of styles, cuts, and transformations</p>
+        </section>
+
+        <section class="filter-container">
+            <button class="filter-btn active" data-filter="all">All Styles</button>
+            <button class="filter-btn" data-filter="mens">Men's</button>
+            <button class="filter-btn" data-filter="womens">Women's</button>
+            <button class="filter-btn" data-filter="color">Color</button>
+            <button class="filter-btn" data-filter="beard">Beard</button>
+            <button class="filter-btn" data-filter="special">Special Occasion</button>
+        </section>
+
+        <section class="gallery-grid">
+            <!-- Gallery Items - In a real implementation, these would be actual images -->
+            <div class="gallery-item" data-category="mens">
+                <div class="gallery-image">Men's Haircut Image</div>
+                <div class="gallery-overlay">
+                    <div class="gallery-title">Modern Fade with Textured Top</div>
+                    <div class="gallery-stylist">By Alex</div>
+                </div>
+            </div>
+            
+            <div class="gallery-item" data-category="womens">
+                <div class="gallery-image">Women's Haircut Image</div>
+                <div class="gallery-overlay">
+                    <div class="gallery-title">Layered Bob with Face-Framing</div>
+                    <div class="gallery-stylist">By Jordan</div>
+                </div>
+            </div>
+            
+            <div class="gallery-item" data-category="color">
+                <div class="gallery-image">Color Service Image</div>
+                <div class="gallery-overlay">
+                    <div class="gallery-title">Caramel Balayage</div>
+                    <div class="gallery-stylist">By Taylor</div>
+                </div>
+            </div>
+            
+            <div class="gallery-item" data-category="beard">
+                <div class="gallery-image">Beard Image</div>
+                <div class="gallery-overlay">
+                    <div class="gallery-title">Full Beard Sculpting</div>
+                    <div class="gallery-stylist">By Alex</div>
+                </div>
+            </div>
+            
+            <div class="gallery-item" data-category="womens">
+                <div class="gallery-image">Women's Style Image</div>
+                <div class="gallery-overlay">
+                    <div class="gallery-title">Long Layers with Side Sweep</div>
+                    <div class="gallery-stylist">By Jordan</div>
+                </div>
+            </div>
+            
+            <div class="gallery-item" data-category="mens">
+                <div class="gallery-image">Men's Cut Image</div>
+                <div class="gallery-overlay">
+                    <div class="gallery-title">Classic Pompadour</div>
+                    <div class="gallery-stylist">By Alex</div>
+                </div>
+            </div>
+            
+            <div class="gallery-item" data-category="color">
+                <div class="gallery-image">Color Service Image</div>
+                <div class="gallery-overlay">
+                    <div class="gallery-title">Platinum Blonde Transformation</div>
+                    <div class="gallery-stylist">By Taylor</div>
+                </div>
+            </div>
+            
+            <div class="gallery-item" data-category="special">
+                <div class="gallery-image">Special Occasion Image</div>
+                <div class="gallery-overlay">
+                    <div class="gallery-title">Bridal Updo with Accessories</div>
+                    <div class="gallery-stylist">By Jordan</div>
+                </div>
+            </div>
+            
+            <div class="gallery-item" data-category="beard">
+                <div class="gallery-image">Beard Image</div>
+                <div class="gallery-overlay">
+                    <div class="gallery-title">Beard and Mustache Styling</div>
+                    <div class="gallery-stylist">By Alex</div>
+                </div>
+            </div>
+            
+            <div class="gallery-item" data-category="special">
+                <div class="gallery-image">Special Occasion Image</div>
+                <div class="gallery-overlay">
+                    <div class="gallery-title">Prom Hair with Curls</div>
+                    <div class="gallery-stylist">By Taylor</div>
+                </div>
+            </div>
+            
+            <div class="gallery-item" data-category="womens">
+                <div class="gallery-image">Women's Cut Image</div>
+                <div class="gallery-overlay">
+                    <div class="gallery-title">Pixie Cut with Side Sweep</div>
+                    <div class="gallery-stylist">By Jordan</div>
+                </div>
+            </div>
+            
+            <div class="gallery-item" data-category="color">
+                <div class="gallery-image">Color Service Image</div>
+                <div class="gallery-overlay">
+                    <div class="gallery-title">Vibrant Red Transformation</div>
+                    <div class="gallery-stylist">By Taylor</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery-instagram">
+            <h2>Follow Us on Instagram</h2>
+            <p>Stay updated with our latest styles and salon moments</p>
+            
+            <div class="instagram-feed">
+                <!-- These would be populated from Instagram API in a real implementation -->
+                <div class="instagram-item">Instagram Post 1</div>
+                <div class="instagram-item">Instagram Post 2</div>
+                <div class="instagram-item">Instagram Post 3</div>
+                <div class="instagram-item">Instagram Post 4</div>
+                <div class="instagram-item">Instagram Post 5</div>
+                <div class="instagram-item">Instagram Post 6</div>
+            </div>
+            
+            <a href="https://instagram.com" target="_blank" class="follow-instagram">
+                <i class="fab fa-instagram"></i> Follow @stylehairdo
+            </a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <img src="images/logo.svg" alt="Style Hair Do Logo" class="footer-logo">
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="booking.html">Book Appointment</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                </ul>
+            </div>
+            <div class="newsletter">
+                <h4>Stay Updated</h4>
+                <p>Subscribe to our newsletter for specials and updates</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Style Hair Do. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Gallery filtering functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                const filter = button.getAttribute('data-filter');
+                
+                galleryItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
